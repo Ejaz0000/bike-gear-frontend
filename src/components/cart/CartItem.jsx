@@ -21,11 +21,11 @@ export default function CartItem({ item }) {
   const itemData = isVariantItem ? item.variant : item.product;
   const productInfo = isVariantItem ? itemData.product : itemData;
   
-  // Handle image URL - add localhost prefix if needed
+  // Handle image URL - add base URL prefix if needed
   const getImageUrl = (imageUrl) => {
     if (!imageUrl) return '/placeholder-image.jpg';
     if (imageUrl.startsWith('http')) return imageUrl;
-    return `http://localhost:8000${imageUrl}`;
+    return `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:8000'}${imageUrl}`;
   };
   
   const price = parseFloat(item.price_snapshot);

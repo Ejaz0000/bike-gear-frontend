@@ -29,7 +29,7 @@ export default function CheckoutSummary({ cart }) {
             <div key={item.id} className="flex gap-3 text-sm pb-3">
               {itemImage && (
                 <img
-                  src={itemImage.startsWith('http') ? itemImage : `http://localhost:8000${itemImage}`}
+                  src={itemImage.startsWith('http') ? itemImage : `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:8000'}${itemImage}`}
                   alt={itemTitle}
                   className="w-12 h-12 rounded object-cover"
                 />

@@ -202,7 +202,7 @@ export default function OrdersSection() {
                     {orderDetails.items?.map((item, idx) => (
                       <div key={idx} className="flex gap-3 p-3 rounded-lg" style={{ backgroundColor: 'rgba(0,0,0,0.02)' }}>
                         {item.product?.primary_image && (
-                          <img src={item.product.primary_image.startsWith('http') ? item.product.primary_image : `http://localhost:8000${item.product.primary_image}`} alt={item.product_title} className="w-16 h-16 rounded object-cover" />
+                          <img src={item.product.primary_image.startsWith('http') ? item.product.primary_image : `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:8000'}${item.product.primary_image}`} alt={item.product_title} className="w-16 h-16 rounded object-cover" />
                         )}
                         <div className="flex-1">
                           <p className="font-medium" style={{ color: 'var(--primary-main)' }}>{item.product_title}</p>
