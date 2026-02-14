@@ -10,7 +10,7 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'api.bikersl.com',
+                hostname: 'bike-gear-backend.onrender.com',
                 pathname: '**',
             }
         ]
